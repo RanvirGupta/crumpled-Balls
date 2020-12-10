@@ -1,0 +1,27 @@
+
+var dustbin;
+var ball;
+var options={
+    isStatic:false;
+    restitution:0.3
+    friction:0.5
+    density:1.2
+}
+function setup(){
+    createCanvas(400,200);
+    ball=createSprite(390,190);
+    dustbin=createSprite(350,150);
+}
+function preload(){
+    ballr=ball.loadImage("helicopter.png");
+    dustbin=dustbin.loadImage("package.png");
+}
+function draw(){
+    background("black");
+    ball=ball.addImage("helicopter.png");
+    dustbin=package.addImage("package.png");
+    if(keyWentDown("DownArrow")){
+        package.velocityY=-2
+    }
+    drawSprites();
+}
